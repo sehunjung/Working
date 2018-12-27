@@ -1,7 +1,13 @@
 
-
 import pymongo
-connection = pymongo.MongoClient("localhost", 27017)
-db = connection.AAA
-collection  = db.testCollection
-collection.insert({"number":0})
+from pymongo import MongoClient
+client = MongoClient("localhost", 27017)
+
+db = client.test
+collection = db.ncs
+docs = collection.find()
+
+for i in docs:
+        print(i)
+print("============================")
+
